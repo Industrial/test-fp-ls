@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "start": "deno run --allow-all src/index.ts"
+  },
+  "imports": {
+    "$std/": "https://deno.land/std/",
+    "fp-ts/": "npm:/fp-ts/"
+  }
+}

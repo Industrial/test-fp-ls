@@ -36,6 +36,9 @@
           nodejs_20.pkgs.eslint
           nodejs_20.pkgs.pnpm
           nodejs_20.pkgs.typescript
+
+          # Deno
+          deno
         ];
       };
     }
