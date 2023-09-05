@@ -1,8 +1,7 @@
 {
   "tasks": {
-    "dev": "echo \"TODO: Implement\"",
-    "lint": "deno lint",
-    "lint:watch": "deno task lint --watch",
+    "install-dependencies": "deno run --allow-read --allow-run lib/install-package-json-modules.ts",
+    "dev": "deno run mod.ts",
     "test": "deno test",
     "test:coverage": "deno task test --coverage=./coverage && deno coverage ./coverage --lcov --output=./coverage/coverage.lcov && deno coverage ./coverage",
     "test:watch": "deno task test --watch"

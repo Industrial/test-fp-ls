@@ -1,6 +1,7 @@
 {
   "imports": {
     "$std/": "https://deno.land/std/",
+    "fp-ts/": "https://esm.sh/fp-ts@2.16.1/",
     "#/": "./"
   }
 }

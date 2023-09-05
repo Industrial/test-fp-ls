@@ -26,6 +26,8 @@
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
           deno
+          nodejs
+          nodejs.pkgs.pnpm
         ];
       };
     }

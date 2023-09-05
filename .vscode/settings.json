@@ -1,6 +1,7 @@
 {
+  "deno.path": "/nix/store/hhblapwcdm243ra47ydd6v6vz9j6c9yd-deno-1.31.1/bin/deno",
   "deno.enable": true,
-  "deno.lint": true,
+  "deno.lint": false,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "deno.unstable": true,
   "typescript.validate.enable": false
