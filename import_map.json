@@ -2,10 +2,27 @@
   "imports": {
     "#/": "./",
     "$std/": "https://deno.land/std@0.191.0/",
-    "@trpc/client": "https://esm.sh/@trpc/client@10.32.0",
-    "@trpc/server": "https://esm.sh/@trpc/server@10.32.0",
+    "@solidjs/meta": "https://esm.sh/@solidjs/meta",
+    "@solidjs/router": "https://esm.sh/@solidjs/router",
+    "@tanstack/solid-query": "https://esm.sh/@tanstack/solid-query",
+    "@trpc/client": "https://esm.sh/@trpc/client",
+    "@trpc/server": "https://esm.sh/@trpc/server",
     "@trpc/server/": "https://esm.sh/@trpc/server@10.32.0/",
+    "@types/node": "https://esm.sh/@types/node",
+    "esbuild": "https://esm.sh/esbuild",
     "fp-ts/": "https://esm.sh/fp-ts@2.16.1/",
-    "zod": "https://esm.sh/zod@3.21.4"
+    "postcss": "https://esm.sh/postcss",
+    "solid-js/web": "https://esm.sh/solid-js/web",
+    "solid-start": "https://esm.sh/solid-start",
+    "solid-start-deno": "https://esm.sh/solid-start-deno",
+    "solid-start-node": "https://esm.sh/solid-start-node",
+    "solid-start-trpc": "https://esm.sh/solid-start-trpc",
+    "solid-start/": "https://esm.sh/solid-start/",
+    "solid-trpc": "https://esm.sh/solid-trpc",
+    "typescript": "https://esm.sh/typescript",
+    "undici": "https://esm.sh/undici",
+    "vite": "npm:vite",
+    "vite-plugin-solid": "npm:vite-plugin-solid",
+    "zod": "https://esm.sh/zod"
   }
 }
