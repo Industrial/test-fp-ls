@@ -1,9 +1,9 @@
 import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client'
 import { delay } from '$std/async/delay.ts'
-import type { AppRouter } from '#/src/trpc/router.ts'
+import type { AppRouter } from '#/src/api/router.ts'
 
 const main = async () => {
-  const url = 'http://127.0.0.1:9000/trpc'
+  const url = 'http://127.0.0.1:4000/trpc'
 
   const proxy = createTRPCProxyClient<AppRouter>({
     links: [loggerLink(), httpBatchLink({ url })],

@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@suid/vite-plugin": "npm:/@suid/vite-plugin",
+    "solid-start-deno": "npm:/solid-start-deno",
+    "solid-start/vite": "npm:/solid-start/vite"
+  }
+}

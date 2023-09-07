@@ -18,4 +18,6 @@ const handler = (request: Request) => {
   })
 }
 
-Deno.serve(handler)
+Deno.serve(handler, {
+  port: 4000,
+})

@@ -1,0 +1,55 @@
+{
+  "name": "@code9/todo-web",
+  "scripts": {
+    "build": "pnpm solid-start build",
+    "dev": "pnpm solid-start dev",
+    "lint": "pnpm lint:tsc && pnpm lint:eslint",
+    "lint:eslint": "eslint --fix --cache .",
+    "lint:tsc": "tsc -p . --noEmit",
+    "update-packages": "pnpx npm-check-updates -u && pnpm i",
+    "pre-commit": "lint-staged",
+    "mikro-orm": "NODE_OPTIONS=\"--loader ts-node/esm -r tsconfig-paths/register\" mikro-orm"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,jsx,ts,tsx,json}": "pnpm lint"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^5.7.12",
+    "@mikro-orm/sqlite": "^5.7.12",
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.8.2",
+    "@suid/icons-material": "^0.6.3",
+    "@suid/material": "^0.12.3",
+    "@suid/types": "^0.5.1",
+    "@suid/vite-plugin": "^0.1.4",
+    "@tanstack/solid-query": "5.0.0-alpha.20",
+    "@trpc/client": "^10.27.1",
+    "@trpc/server": "^10.27.1",
+    "solid-js": "^1.7.2",
+    "solid-start": "^0.2.26",
+    "solid-start-deno": "^0.2.26",
+    "solid-start-trpc": "^0.0.16",
+    "solid-trpc": "0.1.0-sssr.7",
+    "undici": "^5.15.1",
+    "vite": "^4.3.9",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^5.7.12",
+    "@mikro-orm/migrations": "^5.7.12",
+    "@mikro-orm/reflection": "^5.7.12",
+    "@mikro-orm/seeder": "^5.7.12",
+    "@types/node": "^20.3.3",
+    "eslint-config-code9": "^0.3.0",
+    "lint-staged": "^13.2.1",
+    "ts-node": "^10.9.1",
+    "ts-paths-esm-loader": "^1.4.3",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
+  }
+}
