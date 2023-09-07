@@ -1,13 +1,7 @@
-import * as O from 'fp-ts/Option'
-import * as TE from 'fp-ts/TaskEither'
-
-const collectAsyncIterable = async <T>(i: AsyncIterable<T>): Promise<Array<T>> => {
-  const result: Array<T> = []
-  for await (const item of i) {
-    result.push(item)
-  }
-  return result
-}
+import type { TaskEither} from 'fp-ts/TaskEither'
+import { fromAsyncIterable } from '#/lib/array.ts'
+import { fromNullable } from 'fp-ts/Option'
+import { tryCatch, match } from 'fp-ts/TaskEither'
 
 const wrapError = (e: unknown) => {
   if (e instanceof Error) {
@@ -16,15 +10,12 @@ const wrapError = (e: unknown) => {
   return new Error(String(e))
 }
 
-const readDir = (path: string): TE.TaskEither<Error, Array<Deno.DirEntry>> =>
-  TE.tryCatch(async () => collectAsyncIterable(Deno.readDir(path)),
-    wrapError)
+const readDir = (path: string): TaskEither<Error, Array<Deno.DirEntry>> =>
+  tryCatch(() => fromAsyncIterable(Deno.readDir(path)), wrapError)
 
-export function add(x: number, y: number) {
-  O.fromNullable(x + y)
+export function add(x: number, y: number): number {
+  fromNullable(x + y)
   return x + y
 }
 
-const main = () => {
-  TE.match()(readDir('.'))
-}
+match()(readDir('.'))

@@ -1,8 +1,38 @@
 {
-  "deno.path": "/nix/store/hhblapwcdm243ra47ydd6v6vz9j6c9yd-deno-1.31.1/bin/deno",
+  "deno.cacheOnSave": true,
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.codeLens.testArgs": [
+    "--allow-all",
+    "--no-check"
+  ],
   "deno.enable": true,
-  "deno.lint": false,
-  "editor.defaultFormatter": "denoland.vscode-deno",
+  "deno.inlayHints.enumMemberValues.enabled": true,
+  "deno.inlayHints.functionLikeReturnTypes.enabled": true,
+  "deno.inlayHints.parameterNames.enabled": "all",
+  "deno.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+  "deno.inlayHints.parameterTypes.enabled": true,
+  "deno.inlayHints.propertyDeclarationTypes.enabled": true,
+  "deno.inlayHints.variableTypes.enabled": true,
+  "deno.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
+  "deno.lint": true,
+  "deno.path": "/nix/store/hhblapwcdm243ra47ydd6v6vz9j6c9yd-deno-1.31.1/bin/deno",
+  "deno.suggest.autoImports": true,
+  "deno.suggest.completeFunctionCalls": true,
+  "deno.suggest.imports.autoDiscover": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
+  "deno.suggest.names": true,
+  "deno.suggest.paths": true,
+  "deno.testing.args": [
+    "--allow-all",
+    "--no-check"
+  ],
+  "deno.testing.enable": true,
   "deno.unstable": true,
-  "typescript.validate.enable": false
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "eslint.enable": false,
 }

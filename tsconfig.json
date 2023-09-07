@@ -1,7 +1,23 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowImportingTsExtensions": true,
     "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "paths": {
+      "$std/*": [
+        "https:/deno.land/std/*"
+      ],
+      "fp-ts/*": [
+        "https:/esm.sh/fp-ts@2.16.1/*"
+      ],
+      "#/*": [
+        "./*"
+      ]
+    },
+    "target": "esnext",
+    "allowJs": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -14,15 +30,11 @@
       "dom.iterable",
       "esnext"
     ],
-    "module": "esnext",
     "moduleDetection": "force",
-    "moduleResolution": "node",
-    "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "esnext",
     "useDefineForClassFields": true
   },
   "include": [
@@ -31,5 +43,8 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "files": [
+    "./types/lib.esnext.full.d.ts"
   ]
 }
