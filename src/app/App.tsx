@@ -1,4 +1,5 @@
-import type { Component } from 'https://esm.sh/solid-js'
+/* @jsxImportSource solid-js */
+import type { Component } from 'solid-js'
 
 import logo from './logo.svg'
 import styles from './App.module.css'

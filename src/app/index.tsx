@@ -1,10 +1,15 @@
+/* @jsxImportSource solid-js */
 /* @refresh reload */
-import { render } from 'https://esm.sh/solid-js/web'
+import { render } from 'solid-js/web'
 
 import './index.css'
 import App from './App.tsx'
 
-const root = document.getElementById('root')
+const root = window.document.getElementById('root')
+
+if (root === null) {
+  throw new Error('Could not find #root element')
+}
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(
@@ -12,4 +17,6 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   )
 }
 
-render(() => <App />, root!)
+render(() => {
+  return <App />
+}, root)
