@@ -23,18 +23,17 @@
       "attachSimplePort": 9229
     },
     {
-      "name": "Web",
+      "name": "Server",
       "request": "launch",
       "type": "node",
-      "program": "npm:vite",
-      "cwd": "${workspaceFolder}/src/web",
+      "program": "${workspaceFolder}/src/server.ts",
+      "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deno",
       "runtimeArgs": [
         "run",
         "--unstable",
         "--inspect",
-        "--allow-all",
-        "--node-modules-dir"
+        "--allow-all"
       ],
       "args": [
         "."

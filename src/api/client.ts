@@ -3,7 +3,7 @@ import { delay } from '$std/async/delay.ts'
 import type { AppRouter } from '#/src/api/router.ts'
 
 const main = async () => {
-  const url = 'http://127.0.0.1:4000/trpc'
+  const url = 'http://127.0.0.1:4000/api/trpc'
 
   const proxy = createTRPCProxyClient<AppRouter>({
     links: [loggerLink(), httpBatchLink({ url })],
