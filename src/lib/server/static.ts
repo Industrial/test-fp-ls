@@ -4,25 +4,15 @@ import { extname, resolve } from '$std/path/posix.ts'
 import { pipe } from 'fp-ts/function'
 import { typeByExtension } from '$std/media_types/mod.ts'
 
-const fetchURL = (url: URL) => {
-  return TE.tryCatch(async () => {
-    const response = await fetch(url)
-    return response
-  }, E.toError)
-}
-
-const pathname = (urlString: string): string => {
-  const requestURL = new URL(urlString)
-  return requestURL.pathname === '/' ? '/index.html' : requestURL.pathname
-}
-
 export const serveStaticFile = async (request: Request): Promise<Response> => {
-  const filePath = resolve(`dist${pathname(request.url)}`)
+  const requestURL = new URL(request.url)
+  const pathname = requestURL.pathname === '/' ? '/index.html' : requestURL.pathname
+  const filePath = resolve(`dist${pathname}`)
   const fileURL = new URL(filePath, import.meta.url)
   const contentType = typeByExtension(extname(filePath)) ?? 'text/plain'
 
   return await pipe(
-    fetchURL(fileURL),
+    TE.tryCatchK(fetch, E.toError)(fileURL),
     TE.match(
       () => {
         return new Response('Internal Server Error', {
