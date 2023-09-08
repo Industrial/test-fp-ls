@@ -3,3 +3,5 @@
 
 deno task test:coverage
 deno task lint-staged
+deno task build
+git add -A dist
