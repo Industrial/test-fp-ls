@@ -45,6 +45,9 @@
         "prefer-primordials"
       ]
     },
+    "include": [
+      "."
+    ],
     "exclude": [
       ".direnv",
       ".github",
