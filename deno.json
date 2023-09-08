@@ -62,6 +62,10 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "strict": true,
+    "lib": [
+      "esnext",
+      "deno.window"
+    ],
     "strictNullChecks": true,
     "types": [
       "vite/client"
