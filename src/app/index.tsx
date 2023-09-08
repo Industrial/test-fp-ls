@@ -1,5 +1,5 @@
 /* @refresh reload */
-import { render } from 'solid-js/web'
+import { render } from 'https://esm.sh/solid-js/web'
 
 import './index.css'
 import App from './App.tsx'
