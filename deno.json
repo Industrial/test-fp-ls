@@ -44,19 +44,7 @@
         "no-top-level-await",
         "prefer-primordials"
       ]
-    },
-    "include": [
-      "."
-    ],
-    "exclude": [
-      ".direnv",
-      ".github",
-      ".husky",
-      ".vscode",
-      "coverage",
-      "dist",
-      "node_modules",
-    ]
+    }
   },
   "fmt": {
     "options": {
@@ -66,15 +54,6 @@
       "semiColons": false,
       "singleQuote": true,
       "proseWrap": "preserve"
-    },
-    "exclude": [
-      ".direnv",
-      ".github",
-      ".husky",
-      ".vscode",
-      "coverage",
-      "dist",
-      "node_modules",
-    ]
+    }
   }
 }
