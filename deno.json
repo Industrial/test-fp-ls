@@ -1,8 +1,8 @@
 {
   "tasks": {
     "install-dependencies": "deno run --reload --allow-read --allow-run lib/install-package-json-modules.ts",
-    "lint": "deno lint .",
-    "format": "deno fmt .",
+    "lint": "deno lint",
+    "format": "deno fmt",
     "start": "deno run --unstable --allow-read --allow-net src/server.ts",
     "dev": "deno run -A --node-modules-dir npm:vite",
     "build": "deno task build:optimize && deno task build:vite",
