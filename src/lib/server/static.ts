@@ -15,8 +15,8 @@ export const serveStaticFile = async (request: Request): Promise<Response> => {
     TE.tryCatchK(fetch, E.toError)(fileURL),
     TE.match(
       () => {
-        return new Response('Internal Server Error', {
-          status: 500,
+        return new Response(undefined, {
+          status: 404,
         })
       },
       (fileResponse) => {
