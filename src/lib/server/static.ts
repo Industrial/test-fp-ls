@@ -1,25 +1,41 @@
+import * as E from 'fp-ts/Either'
+import * as TE from 'fp-ts/TaskEither'
 import { extname } from '$std/path/posix.ts'
+import { pipe } from 'fp-ts/function'
 import { typeByExtension } from '$std/media_types/mod.ts'
 
-export const serveStaticFile = async (request: Request): Promise<Response> => {
-  const requestURL = new URL(request.url)
-  let pathname = requestURL.pathname
-  if (pathname === '/') {
-    pathname = '/index.html'
-  }
+const fetchURL = TE.tryCatchK(async (url: URL) => {
+  const response = await fetch(url)
+  return response
+}, E.toError)
 
-  const filePath = `../dist${pathname}`
+const pathname = (urlString: string): string => {
+  const requestURL = new URL(urlString)
+  return requestURL.pathname === '/' ? '/index.html' : requestURL.pathname
+}
+
+export const serveStaticFile = async (request: Request): Promise<Response> => {
+  const filePath = `../dist${pathname(request.url)}`
   const fileURL = new URL(filePath, import.meta.url)
-  const fileResponse = await fetch(fileURL)
   const contentType = typeByExtension(extname(filePath)) ?? 'text/plain'
 
-  const response = new Response(fileResponse.body, {
-    status: fileResponse.status,
-    statusText: fileResponse.statusText,
-    headers: {
-      'Content-Type': contentType,
-    },
-  })
-
-  return response
+  return await pipe(
+    fetchURL(fileURL),
+    TE.match(
+      () => {
+        return new Response('Internal Server Error', {
+          status: 500,
+        })
+      },
+      (fileResponse) => {
+        return new Response(fileResponse.body, {
+          status: fileResponse.status,
+          statusText: fileResponse.statusText,
+          headers: {
+            'Content-Type': contentType,
+          },
+        })
+      },
+    ),
+  )()
 }
