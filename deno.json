@@ -5,7 +5,9 @@
     "format": "deno fmt .",
     "start": "deno run --unstable --allow-read --allow-net src/server.ts",
     "dev": "deno run -A --node-modules-dir npm:vite",
-    "build": "deno run -A --node-modules-dir npm:vite build",
+    "build": "deno task build:optimize && deno task build:vite",
+    "build:vite": "deno run -A --node-modules-dir npm:vite build",
+    "build:optimize": "deno run -A --node-modules-dir npm:vite optimize",
     "test": "deno test",
     "test:coverage": "deno task test --coverage=./coverage && deno coverage ./coverage --lcov --output=./coverage/coverage.lcov && deno coverage ./coverage",
     "test:watch": "deno task test --watch"
