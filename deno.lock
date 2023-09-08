@@ -276,7 +276,8 @@
       "husky@^8.0.1": "husky@8.0.3",
       "lint-staged": "lint-staged@14.0.1",
       "lint-staged@^13.0.3": "lint-staged@13.3.0",
-      "undefined": "undefined@0.1.0"
+      "undefined": "undefined@0.1.0",
+      "zod": "zod@3.21.4"
     },
     "packages": {
       "ansi-escapes@5.0.0": {
@@ -594,6 +595,10 @@
       },
       "yaml@2.3.1": {
         "integrity": "sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==",
+        "dependencies": {}
+      },
+      "zod@3.21.4": {
+        "integrity": "sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==",
         "dependencies": {}
       }
     }

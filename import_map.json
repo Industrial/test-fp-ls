@@ -6,6 +6,7 @@
     "@trpc/server": "https://esm.sh/@trpc/server",
     "@trpc/server/": "https://esm.sh/@trpc/server@10.32.0/",
     "esbuild": "https://esm.sh/esbuild",
-    "fp-ts/": "https://esm.sh/fp-ts@2.16.1/"
+    "fp-ts/": "https://esm.sh/fp-ts@2.16.1/",
+    "zod": "npm:/zod"
   }
 }
