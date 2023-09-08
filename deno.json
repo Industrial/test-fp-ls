@@ -63,7 +63,8 @@
     "jsxImportSource": "solid-js",
     "strict": true,
     "lib": [
-      "deno.window"
+      "deno.window",
+      "deno.unstable"
     ],
     "strictNullChecks": true,
     "types": [

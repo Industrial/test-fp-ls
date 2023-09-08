@@ -3,7 +3,7 @@
     "#/": "./",
     "$std/": "https://deno.land/std@0.191.0/",
     "@trpc/client": "https://esm.sh/@trpc/client",
-    "@trpc/server": "https://esm.sh/@trpc/server",
+    "@trpc/server": "https://esm.sh/@trpc/server@10.32.0",
     "@trpc/server/": "https://esm.sh/@trpc/server@10.32.0/",
     "esbuild": "https://esm.sh/esbuild",
     "fp-ts/": "https://esm.sh/fp-ts@2.16.1/",
