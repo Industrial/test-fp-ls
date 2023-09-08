@@ -5,14 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "API",
       "request": "launch",
-      "name": "Launch Program",
       "type": "node",
-      "program": "${workspaceFolder}/mod.ts",
+      "program": "${workspaceFolder}/src/api/server.ts",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deno",
       "runtimeArgs": [
         "run",
+        "--unstable",
         "--inspect-brk",
         "--allow-all"
       ],
@@ -22,8 +23,27 @@
       "attachSimplePort": 9229
     },
     {
+      "name": "Web",
       "request": "launch",
+      "type": "node",
+      "program": "npm:vite",
+      "cwd": "${workspaceFolder}/src/web",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "run",
+        "--unstable",
+        "--inspect",
+        "--allow-all",
+        "--node-modules-dir"
+      ],
+      "args": [
+        "."
+      ],
+      "attachSimplePort": 9229
+    },
+    {
       "name": "Debug tests",
+      "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "deno",
